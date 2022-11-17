@@ -114,12 +114,32 @@ address {
   letter-spacing: 0.02em;
   color: var(--main-color);
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+
   padding-top: 32px;
   padding-bottom: 32px;
+  
+  
   }
+  .current::after {
+    content: ' ';
+    width: 100%;
+    height: 4px;
+    background-color: #2196f3;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+.current {
+  position: relative;
+}
+
 .current:visited {
   color: var(--accent-color); 
 }
+
 .header-list-link:hover,
 .header-list-link:focus {
   color: var(--accent-color);
@@ -140,8 +160,11 @@ address {
   color: var(--second-color);
   text-decoration: none;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   padding-top: 32px;
   padding-bottom: 32px;
+ 
 }
 .header-mail-link {
   display: flex;
@@ -165,8 +188,11 @@ address {
   color: var(--second-color);
   text-decoration: none;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   padding-top: 32px;
   padding-bottom: 32px;
+  
 }
 .header-link:hover,
 .header-link:focus {
@@ -236,6 +262,7 @@ address {
   padding: 10px 32px;
   color: #FFFFFF;
   background-color: var(--accent-color);
+  
 
 
 }
@@ -333,6 +360,39 @@ address {
       gap: 30px;
 
     }
+    .work-list .work-item {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+   
+    
+    .work-description {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: calc(16/14);
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background-color: rgba(47, 48, 58, 0.8);
+      position: absolute;
+      bottom: 0;
+      height: 100;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 500ms linear;
+    }
+    
+    .work-list .work-item:hover .work-description {
+      transform: translateY(0);
+    }
+    
 
 /*About styles*/
 .about {
@@ -369,6 +429,8 @@ address {
     width: 44px;
     height: 44px;
     background-color: var(--body-color--);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     margin-right: 10px;
     border-radius: 50%;
   }
@@ -383,6 +445,8 @@ address {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     
   }
   .about-list .social-item:last-child {
@@ -473,7 +537,9 @@ address {
     justify-content: center;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    color: #AFB1B8
+    color: #AFB1B8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   }
 
 .clients-list .clients-icon {
@@ -537,6 +603,8 @@ address {
   line-height: calc(24/14);
   letter-spacing: 0.03em;
   color: #FFFFFF;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   
   text-decoration: none;
 }
@@ -566,6 +634,7 @@ address {
   line-height: calc(24/14);
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
   text-decoration: none;
 }
@@ -581,6 +650,8 @@ address {
   line-height: calc(24/14);
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   
   text-decoration: none;
 }
@@ -623,8 +694,11 @@ address {
     width: 44px;
     height: 44px;
     background-color: #44454e;
+    
+    
     margin-right: 10px;
     border-radius: 50%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
 .footer-link:focus {
@@ -675,6 +749,8 @@ line-height: calc(26/16);
 
 text-align: center;
 letter-spacing: 0.03em;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 padding: 6px 22px;
 
 
@@ -703,7 +779,12 @@ box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   
 }
-
+.examples-card:hover,
+.examples-card:focus {
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 .galery-list {
   display: flex;
@@ -713,11 +794,39 @@ box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
 }
 .galery-list-item {
   display: block;
+ 
+  
 }
+.galery-list-item:hover .galery-description {
+  transform: translateY(0);
+}
+.img-wrapper-galery {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.galery-description  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(26/18);
+  letter-spacing: 0.03em;
+  color: var(--section-color--);
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .galery-list-item:hover,
 .galery-list-item:focus{
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 .galery-about-text {
@@ -748,4 +857,64 @@ font-size: 16px;
 line-height: calc(30/16);
 letter-spacing: 0.03em;
 color: var(--second-color);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.modal-backdrop.is-hidden .modal {
+  transform: rotate(-180deg);
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  transition: transform 1000ms linear;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal .close-sign {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border:  1px solid 
+  rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #000000;
+  
+  
+  
+  
+  
 }
