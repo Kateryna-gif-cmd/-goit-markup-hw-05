@@ -393,7 +393,9 @@ address {
       transform: translateY(0);
     }
     
-
+    .work-list .work-item:focus .work-description {
+      transform: translateY(0);
+    }
 /*About styles*/
 .about {
   background: var(--section-color--);
